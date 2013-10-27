@@ -32,7 +32,7 @@ NSString * const defaultMinor = @"21";
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.service = [APService sharedInstance];
+    self.service = [[APService alloc] initWithMajorData:[@"42" dataUsingEncoding:NSUTF8StringEncoding] minorData:[@"21" dataUsingEncoding:NSUTF8StringEncoding]];
     self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
 }
 

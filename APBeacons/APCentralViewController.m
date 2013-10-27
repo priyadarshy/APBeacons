@@ -28,8 +28,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
     self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:nil];
+    self.service = [[APService alloc] initWithMajorData:nil minorData:nil];
 }
 
 - (void)didReceiveMemoryWarning

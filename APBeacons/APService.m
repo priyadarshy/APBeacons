@@ -19,26 +19,14 @@ NSString * const keySeedString = @"6FED21D8-B48C-4B56-B6A1-98BBC0AEC4DA";
 
 @implementation APService
 
-+(id)sharedInstance
-{
-    static APService *__sharedInstance;
-    static dispatch_once_t onceToken;
-    
-    dispatch_once(&onceToken, ^{
-        __sharedInstance = [[APService alloc] init];
-    });
-    
-    return __sharedInstance;
-}
-
 - (id)initWithMajorData:(NSData *)majorData minorData:(NSData *)minorData {
     
     self = [super init];
     if (self) {
         _defaultService = [[CBMutableService alloc] initWithType:[self defaultServiceUUID] primary:YES];
         _majorCharacteristic = [[CBMutableCharacteristic alloc] initWithType:[self majorCharacteristicUUID] properties:CBCharacteristicPropertyRead value:majorData permissions:CBAttributePermissionsReadable];
-        _minorCharacteristic = [[CBMutableCharacteristic alloc] initWithType:[self minorCharacteristicUUID] properties:CBCharacteristicPropertyRead value:majorData permissions:CBAttributePermissionsReadable];
-        _verificationHashCharacteristic = [[CBMutableCharacteristic alloc] initWithType:[self verificationHashCharacteristicUUID] properties:CBCharacteristicPropertyRead value:majorData permissions:CBAttributePermissionsReadable];
+        _minorCharacteristic = [[CBMutableCharacteristic alloc] initWithType:[self minorCharacteristicUUID] properties:CBCharacteristicPropertyRead value:minorData permissions:CBAttributePermissionsReadable];
+        _verificationHashCharacteristic = [[CBMutableCharacteristic alloc] initWithType:[self verificationHashCharacteristicUUID] properties:CBCharacteristicPropertyRead value:[self verificationKeyData] permissions:CBAttributePermissionsReadable];
         _defaultService.characteristics = @[self.majorCharacteristic, self.minorCharacteristic, self.verificationHashCharacteristic];
     }
     return self;
@@ -93,6 +81,20 @@ NSString * const keySeedString = @"6FED21D8-B48C-4B56-B6A1-98BBC0AEC4DA";
 -(CBUUID *)verificationHashCharacteristicUUID
 {
     return [CBUUID UUIDWithString:keyCharacteristicUUIDString];
+}
+
+-(NSData *)verificationKeyData
+{
+    // The locally computed key and key string are computed from digest.
+    unsigned char digest[CC_SHA1_DIGEST_LENGTH];
+    NSData *stringBytes = [keySeedString dataUsingEncoding: NSUTF8StringEncoding];
+    // Attempt the SHA-1 hash computation.
+    if (CC_SHA1([stringBytes bytes], (int)[stringBytes length], digest)) {
+        NSString *locallyComputedKey = [NSString stringWithUTF8String:(char *)digest];
+        return [locallyComputedKey dataUsingEncoding:NSUTF8StringEncoding];
+    } else {
+        return nil;
+    }
 }
 
 @end

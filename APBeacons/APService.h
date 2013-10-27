@@ -32,7 +32,7 @@ NSString * const keySeedString;
 @property (strong, nonatomic, readonly) CBMutableCharacteristic *minorCharacteristic;
 @property (strong, nonatomic, readonly) CBMutableCharacteristic *verificationHashCharacteristic;
 
-+(id)sharedInstance;
+-(id)initWithMajorData:(NSData *)majorData minorData:(NSData *)minorData;
 -(BOOL)verifyHash:(NSString *)verificationHash;
 -(NSArray *)availableServiceUUIDs;
 -(NSArray *)availableCharacteristicUUIDs;
