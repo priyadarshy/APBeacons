@@ -14,13 +14,15 @@
 		C5B81B61181A6193004D41DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B81B60181A6193004D41DF /* main.m */; };
 		C5B81B65181A6193004D41DF /* APAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B81B64181A6193004D41DF /* APAppDelegate.m */; };
 		C5B81B68181A6193004D41DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5B81B66181A6193004D41DF /* Main.storyboard */; };
-		C5B81B6B181A6193004D41DF /* APViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B81B6A181A6193004D41DF /* APViewController.m */; };
 		C5B81B6D181A6193004D41DF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5B81B6C181A6193004D41DF /* Images.xcassets */; };
 		C5B81B74181A6193004D41DF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B81B73181A6193004D41DF /* XCTest.framework */; };
 		C5B81B75181A6193004D41DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B81B54181A6193004D41DF /* Foundation.framework */; };
 		C5B81B76181A6193004D41DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B81B58181A6193004D41DF /* UIKit.framework */; };
 		C5B81B7E181A6193004D41DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5B81B7C181A6193004D41DF /* InfoPlist.strings */; };
 		C5B81B80181A6193004D41DF /* APBeaconsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B81B7F181A6193004D41DF /* APBeaconsTests.m */; };
+		C5B81B8B181A61E1004D41DF /* APCentralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B81B8A181A61E1004D41DF /* APCentralViewController.m */; };
+		C5B81B8E181A61F0004D41DF /* APPeripheralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B81B8D181A61F0004D41DF /* APPeripheralViewController.m */; };
+		C5B81B91181A7828004D41DF /* APService.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B81B90181A7828004D41DF /* APService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +47,18 @@
 		C5B81B63181A6193004D41DF /* APAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APAppDelegate.h; sourceTree = "<group>"; };
 		C5B81B64181A6193004D41DF /* APAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APAppDelegate.m; sourceTree = "<group>"; };
 		C5B81B67181A6193004D41DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C5B81B69181A6193004D41DF /* APViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APViewController.h; sourceTree = "<group>"; };
-		C5B81B6A181A6193004D41DF /* APViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APViewController.m; sourceTree = "<group>"; };
 		C5B81B6C181A6193004D41DF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C5B81B72181A6193004D41DF /* APBeaconsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APBeaconsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B81B73181A6193004D41DF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C5B81B7B181A6193004D41DF /* APBeaconsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "APBeaconsTests-Info.plist"; sourceTree = "<group>"; };
 		C5B81B7D181A6193004D41DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C5B81B7F181A6193004D41DF /* APBeaconsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APBeaconsTests.m; sourceTree = "<group>"; };
+		C5B81B89181A61E1004D41DF /* APCentralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCentralViewController.h; sourceTree = "<group>"; };
+		C5B81B8A181A61E1004D41DF /* APCentralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCentralViewController.m; sourceTree = "<group>"; };
+		C5B81B8C181A61F0004D41DF /* APPeripheralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPeripheralViewController.h; sourceTree = "<group>"; };
+		C5B81B8D181A61F0004D41DF /* APPeripheralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPeripheralViewController.m; sourceTree = "<group>"; };
+		C5B81B8F181A7828004D41DF /* APService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APService.h; sourceTree = "<group>"; };
+		C5B81B90181A7828004D41DF /* APService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,10 +121,14 @@
 				C5B81B63181A6193004D41DF /* APAppDelegate.h */,
 				C5B81B64181A6193004D41DF /* APAppDelegate.m */,
 				C5B81B66181A6193004D41DF /* Main.storyboard */,
-				C5B81B69181A6193004D41DF /* APViewController.h */,
-				C5B81B6A181A6193004D41DF /* APViewController.m */,
 				C5B81B6C181A6193004D41DF /* Images.xcassets */,
 				C5B81B5B181A6193004D41DF /* Supporting Files */,
+				C5B81B89181A61E1004D41DF /* APCentralViewController.h */,
+				C5B81B8A181A61E1004D41DF /* APCentralViewController.m */,
+				C5B81B8C181A61F0004D41DF /* APPeripheralViewController.h */,
+				C5B81B8D181A61F0004D41DF /* APPeripheralViewController.m */,
+				C5B81B8F181A7828004D41DF /* APService.h */,
+				C5B81B90181A7828004D41DF /* APService.m */,
 			);
 			path = APBeacons;
 			sourceTree = "<group>";
@@ -200,6 +210,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "EEMe labs";
 				TargetAttributes = {
+					C5B81B50181A6193004D41DF = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					C5B81B71181A6193004D41DF = {
 						TestTargetID = C5B81B50181A6193004D41DF;
 					};
@@ -251,8 +268,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5B81B61181A6193004D41DF /* main.m in Sources */,
-				C5B81B6B181A6193004D41DF /* APViewController.m in Sources */,
 				C5B81B65181A6193004D41DF /* APAppDelegate.m in Sources */,
+				C5B81B8B181A61E1004D41DF /* APCentralViewController.m in Sources */,
+				C5B81B91181A7828004D41DF /* APService.m in Sources */,
+				C5B81B8E181A61F0004D41DF /* APPeripheralViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +401,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "APBeacons/APBeacons-Prefix.pch";
 				INFOPLIST_FILE = "APBeacons/APBeacons-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -395,6 +415,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "APBeacons/APBeacons-Prefix.pch";
 				INFOPLIST_FILE = "APBeacons/APBeacons-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -461,6 +482,7 @@
 				C5B81B85181A6193004D41DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5B81B86181A6193004D41DF /* Build configuration list for PBXNativeTarget "APBeaconsTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +491,7 @@
 				C5B81B88181A6193004D41DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
