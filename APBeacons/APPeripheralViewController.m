@@ -45,34 +45,14 @@ NSString * const defaultMinor = @"21";
 #pragma mark - PeripheralSetup
 
 -(void)setupService
-{
-//    // Create characteristic UUID and initialize major and minor characteristic.
-//    self.majorCharacteristic = [[CBMutableCharacteristic alloc]
-//                                  initWithType:[APService majorCharacteristicUUID]
-//                                  properties:CBCharacteristicPropertyRead
-//                                  value:[defaultMajor dataUsingEncoding:NSUTF8StringEncoding]
-//                                  permissions:CBAttributePermissionsReadable];
-//    
-//    self.minorCharacteristic = [[CBMutableCharacteristic alloc]
-//                                initWithType:[APService minorCharacteristicUUID]
-//                                properties:CBCharacteristicPropertyRead
-//                                value:[defaultMinor dataUsingEncoding:NSUTF8StringEncoding]
-//                                permissions:CBAttributePermissionsReadable];
-//    
-//    self.defaultService = [[CBMutableService alloc] initWithType:[APService defaultServiceUUID] primary:YES];
-//    // Associate the default characteristic as a child of the default service.
-//    self.defaultService.characteristics = @[self.majorCharacteristic, self.minorCharacteristic];
-//    
-//    // Publish the service to the database of BLE services.
-//    [self.peripheralManager addService:self.defaultService];
-    
+{    
     [self.peripheralManager addService:self.service.defaultService];
 }
 
 -(void)advertiseService
 {
     [self.peripheralManager startAdvertising:@{CBAdvertisementDataServiceUUIDsKey:
-                                                 @[self.defaultService.UUID],
+                                                 [self.service availableServiceUUIDs],
                                                CBAdvertisementDataLocalNameKey:
                                                    @"APBeacons"
                                                }

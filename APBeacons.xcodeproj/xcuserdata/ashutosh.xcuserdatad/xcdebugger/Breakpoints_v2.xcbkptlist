@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APBeacons/APPeripheralViewController.m"
-            timestampString = "404434880.468995"
+            timestampString = "404676540.400807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "-peripheralManagerDidUpdateState:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APBeacons/APPeripheralViewController.m"
-            timestampString = "404434880.468995"
+            timestampString = "404676540.400807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "-peripheralManagerDidUpdateState:"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APBeacons/APCentralViewController.m"
-            timestampString = "404437660.335974"
+            timestampString = "404676540.400807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "-peripheral:didDiscoverServices:"
             landmarkType = "5">
             <Locations>
@@ -120,12 +120,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APBeacons/APCentralViewController.m"
-            timestampString = "404437660.335974"
+            timestampString = "404676540.400807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "-peripheral:didDiscoverServices:"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "-peripheral:didDiscoverCharacteristicsForService:error:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -136,12 +136,104 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APBeacons/APCentralViewController.m"
-            timestampString = "404437660.335974"
+            timestampString = "404676854.863086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "-peripheral:didDiscoverCharacteristicsForService:error:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[APCentralViewController peripheral:didDiscoverCharacteristicsForService:error:]"
+                  moduleName = "APBeacons"
+                  urlString = "file://localhost/Users/ashutosh/devsrc/APBeacons/APBeacons/APCentralViewController.m"
+                  timestampString = "404676861.629673"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "568">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[APCentralViewController peripheral:didDiscoverCharacteristicsForService:error:]"
+                  moduleName = "APBeacons"
+                  urlString = "file://localhost/Users/ashutosh/devsrc/APBeacons/APBeacons/APCentralViewController.m"
+                  timestampString = "404676861.629999"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "652">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "APBeacons/APCentralViewController.m"
+            timestampString = "404676856.096565"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "-peripheral:didDiscoverCharacteristicsForService:error:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[APCentralViewController peripheral:didDiscoverCharacteristicsForService:error:]"
+                  moduleName = "APBeacons"
+                  urlString = "file://localhost/Users/ashutosh/devsrc/APBeacons/APBeacons/APCentralViewController.m"
+                  timestampString = "404676861.630373"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "552">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[APCentralViewController peripheral:didDiscoverCharacteristicsForService:error:]"
+                  moduleName = "APBeacons"
+                  urlString = "file://localhost/Users/ashutosh/devsrc/APBeacons/APBeacons/APCentralViewController.m"
+                  timestampString = "404676861.630817"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "672">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "APBeacons/APCentralViewController.m"
+            timestampString = "404676882.99065"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "-peripheral:didUpdateValueForCharacteristic:error:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

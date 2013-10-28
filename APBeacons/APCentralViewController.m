@@ -103,7 +103,6 @@
         NSLog(@"Discovered service %@", service);
         // TODO Should be a stronger check.
         if (service.isPrimary) {
-//            [peripheral discoverCharacteristics:nil forService:service];
             [peripheral discoverCharacteristics:[self.service availableCharacteristicUUIDs] forService:service];
         }
     }
