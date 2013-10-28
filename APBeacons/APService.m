@@ -32,27 +32,6 @@ NSString * const keySeedString = @"6FED21D8-B48C-4B56-B6A1-98BBC0AEC4DA";
     return self;
 }
 
--(BOOL)verifyHash:(NSString *)key
-{
-    // The locally computed key and key string are computed from digest.
-    unsigned char digest[CC_SHA1_DIGEST_LENGTH];
-    NSData *stringBytes = [keySeedString dataUsingEncoding: NSUTF8StringEncoding];
-    // Attempt the SHA-1 hash computation.
-    if (CC_SHA1([stringBytes bytes], (int)[stringBytes length], digest)) {
-        // SHA-1 hash has been calculated and stored in 'digest'.
-        NSString *locallyComputedKey = [NSString stringWithUTF8String:(char *)digest];
-        // Verify the hash.
-        if ([key isEqualToString:locallyComputedKey]) {
-            return YES;
-        } else {
-            return NO;
-        }
-    } else {
-        NSLog(@"Unable to compute SHA1");
-        return NO;
-    }
-}
-
 -(NSArray *)availableServiceUUIDs
 {
     return @[[self defaultServiceUUID]];
@@ -85,13 +64,35 @@ NSString * const keySeedString = @"6FED21D8-B48C-4B56-B6A1-98BBC0AEC4DA";
 
 -(NSData *)verificationKeyData
 {
-    // The locally computed key and key string are computed from digest.
-    unsigned char digest[CC_SHA1_DIGEST_LENGTH];
-    NSData *stringBytes = [keySeedString dataUsingEncoding: NSUTF8StringEncoding];
-    // Attempt the SHA-1 hash computation.
-    if (CC_SHA1([stringBytes bytes], (int)[stringBytes length], digest)) {
-        NSString *locallyComputedKey = [NSString stringWithUTF8String:(char *)digest];
-        return [locallyComputedKey dataUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"%@", [[self sha1:keySeedString] dataUsingEncoding:NSUTF8StringEncoding]);
+    return [[self sha1:keySeedString] dataUsingEncoding:NSUTF8StringEncoding];
+}
+
+-(BOOL)verifyHash:(NSString *)verificationHash
+{
+    if ([verificationHash isEqualToString:[self sha1:keySeedString]]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+-(NSString*) sha1:(NSString*)input
+{
+    const char *cstr = [input cStringUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [NSData dataWithBytes:cstr length:input.length];
+    
+    uint8_t digest[CC_SHA1_DIGEST_LENGTH];
+    
+    if (CC_SHA1(data.bytes, data.length, digest)){
+    
+        NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+    
+        for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++){
+            [output appendFormat:@"%02x", digest[i]];
+        }
+        
+        return output;
     } else {
         return nil;
     }

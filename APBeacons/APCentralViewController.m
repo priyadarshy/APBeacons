@@ -136,6 +136,13 @@ didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic
     
     NSLog(@"Value for <CBCharacteristic = %@> is %@", characteristic, dataString);
     
+    // If the hash value checks out. We can verify this sensor.
+    if ([characteristic.UUID isEqual:[self.service verificationHashCharacteristicUUID]]) {
+        NSLog(@"This is hte characterisitc we're looking for.");
+        if ([self.service verifyHash:dataString]) {
+            NSLog(@"Peripheral verified.");
+        }
+    }
 }
 
 @end
