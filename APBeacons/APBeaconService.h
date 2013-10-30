@@ -1,11 +1,11 @@
 //
-//  APService.h
+//  APBeaconService.h
 //  APBeacons
 //
 //  Created by Ashutosh Priyadarshy on 10/25/13.
 //  Copyright (c) 2013 EEMe labs. All rights reserved.
 //
-//   Description of APService as a BLE Service.
+//   This describes the service that every APBeacon transmits via BLE.
 //    <<default_service>>
 //       -> major_characteristic //[User Data]
 //       -> minor_characteristic //[User Data]
@@ -25,7 +25,7 @@ NSString * const verificationHashCharacteristicUUIDString;
 NSString * const keySeedString;
 
 
-@interface APService : NSObject
+@interface APBeaconService : NSObject
 
 @property (strong, nonatomic, readonly) CBMutableService *defaultService;
 @property (strong, nonatomic, readonly) CBMutableCharacteristic *majorCharacteristic;

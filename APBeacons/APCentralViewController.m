@@ -7,7 +7,7 @@
 //
 
 #import "APCentralViewController.h"
-#import "APService.h"
+#import "APBeaconService.h"
 
 @interface APCentralViewController ()
 
@@ -29,7 +29,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:nil];
-    self.service = [[APService alloc] initWithMajorData:nil minorData:nil];
+    self.service = [[APBeaconService alloc] initWithMajorData:nil minorData:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -141,6 +141,7 @@ didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic
         NSLog(@"This is hte characterisitc we're looking for.");
         if ([self.service verifyHash:dataString]) {
             NSLog(@"Peripheral verified.");
+            // Time to create a beacon and hold on to it.
         }
     }
 }

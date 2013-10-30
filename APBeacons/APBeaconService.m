@@ -1,12 +1,12 @@
 //
-//  APService.m
+//  APBeaconService.m
 //  APBeacons
 //
 //  Created by Ashutosh Priyadarshy on 10/25/13.
 //  Copyright (c) 2013 EEMe labs. All rights reserved.
 //
 
-#import "APService.h"
+#import "APBeaconService.h"
 #import <CommonCrypto/CommonCrypto.h>
 
 /* BLE Service and Characteristics */
@@ -17,17 +17,26 @@ NSString * const keyCharacteristicUUIDString = @"C4B0E944-D3E1-4844-99A4-66F9806
 /* Seed value for computing verification hash. */
 NSString * const keySeedString = @"6FED21D8-B48C-4B56-B6A1-98BBC0AEC4DA";
 
-@implementation APService
+@interface APBeaconService ()
 
-- (id)initWithMajorData:(NSData *)majorData minorData:(NSData *)minorData {
-    
+@property CBMutableService *defaultService;
+@property CBMutableCharacteristic *majorCharacteristic;
+@property CBMutableCharacteristic *minorCharacteristic;
+@property CBMutableCharacteristic *verificationHashCharacteristic;
+
+@end
+
+@implementation APBeaconService
+
+-(id)initWithMajorData:(NSData *)majorData minorData:(NSData *)minorData
+{
     self = [super init];
     if (self) {
-        _defaultService = [[CBMutableService alloc] initWithType:[self defaultServiceUUID] primary:YES];
-        _majorCharacteristic = [[CBMutableCharacteristic alloc] initWithType:[self majorCharacteristicUUID] properties:CBCharacteristicPropertyRead value:majorData permissions:CBAttributePermissionsReadable];
-        _minorCharacteristic = [[CBMutableCharacteristic alloc] initWithType:[self minorCharacteristicUUID] properties:CBCharacteristicPropertyRead value:minorData permissions:CBAttributePermissionsReadable];
-        _verificationHashCharacteristic = [[CBMutableCharacteristic alloc] initWithType:[self verificationHashCharacteristicUUID] properties:CBCharacteristicPropertyRead value:[self verificationKeyData] permissions:CBAttributePermissionsReadable];
-        _defaultService.characteristics = @[self.majorCharacteristic, self.minorCharacteristic, self.verificationHashCharacteristic];
+        self.defaultService = [[CBMutableService alloc] initWithType:[self defaultServiceUUID] primary:YES];
+        self.majorCharacteristic = [[CBMutableCharacteristic alloc] initWithType:[self majorCharacteristicUUID] properties:CBCharacteristicPropertyRead value:majorData permissions:CBAttributePermissionsReadable];
+        self.minorCharacteristic = [[CBMutableCharacteristic alloc] initWithType:[self minorCharacteristicUUID] properties:CBCharacteristicPropertyRead value:minorData permissions:CBAttributePermissionsReadable];
+        self.verificationHashCharacteristic = [[CBMutableCharacteristic alloc] initWithType:[self verificationHashCharacteristicUUID] properties:CBCharacteristicPropertyRead value:[self verificationKeyData] permissions:CBAttributePermissionsReadable];
+        self.defaultService.characteristics = @[self.majorCharacteristic, self.minorCharacteristic, self.verificationHashCharacteristic];
     }
     return self;
 }

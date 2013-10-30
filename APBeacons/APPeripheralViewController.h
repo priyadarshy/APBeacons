@@ -9,14 +9,12 @@
 
 @import UIKit;
 @import CoreBluetooth;
-#import "APService.h"
+#import "APBeaconService.h"
 
 @interface APPeripheralViewController : UIViewController <CBPeripheralManagerDelegate>
 
-@property (strong, nonatomic) APService *service; 
+@property (strong, nonatomic) APBeaconService *service; 
 @property (strong, nonatomic) CBPeripheralManager *peripheralManager;
-@property (strong, nonatomic) CBMutableService *defaultService;
-@property (strong, nonatomic) CBMutableCharacteristic *majorCharacteristic;
-@property (strong, nonatomic) CBMutableCharacteristic *minorCharacteristic;
 
 @end
+
