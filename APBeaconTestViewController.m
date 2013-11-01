@@ -31,6 +31,7 @@
     [self.beaconManager setDelegate:self];
     APBeaconRegion *beaconRegion = [[APBeaconRegion alloc] initWithProximityUUID:[NSUUID UUID] major:[NSNumber numberWithInt:44] minor:[NSNumber numberWithInt:22] identifier:@"com.beacons.test"];
     [self.beaconManager startBroadcastingBeaconRegion:beaconRegion];
+    [self.beaconManager beginScanningForBeacons];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,7 +43,7 @@
 #pragma mark - APBeaconManagerDelegate Methods
 - (void)beaconManager:(APBeaconManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(APBeaconRegion *)region
 {
-    
+    NSLog(@"Beacons = %@", beacons);
 }
 - (void)beaconManager:(APBeaconManager *)manager didEnterRegion:(APBeaconRegion *)region
 {

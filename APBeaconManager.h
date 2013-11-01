@@ -5,11 +5,16 @@
 //  Created by Ashutosh Priyadarshy on 10/28/13.
 //  Copyright (c) 2013 EEMe labs. All rights reserved.
 //
+//
+//  [P0], [P1], ... [PN]
+//
+//  if (Pi is APBeacon) { Pi in scannedPeripherals }
+//  if
 
 @import Foundation;
 @import CoreBluetooth;
 #import "APBeaconRegion.h"
-
+#import "APMutableBeacon.h"
 
 @class APBeaconManager;
 @protocol APBeaconManagerDelegate <NSObject>
@@ -29,18 +34,23 @@
 
 @end
 
-// TODO ADD Back the CBCentralManagerDelegate
-@interface APBeaconManager : NSObject <CBPeripheralManagerDelegate, CBPeripheralDelegate>
+@interface APBeaconManager : NSObject <CBCentralManagerDelegate, CBPeripheralManagerDelegate, CBPeripheralDelegate>
 
 @property (weak, nonatomic) id<APBeaconManagerDelegate> delegate;
 @property (strong, nonatomic, readonly) CBPeripheralManager *peripheralManager;
-//@property (strong, nonatomic, readonly) CBCentralManager *centralManager;
+
+@property (strong, nonatomic, readonly) CBCentralManager *centralManager;
 @property (strong, nonatomic, readonly) APBeaconRegion *beaconRegion;
-@property (strong, nonatomic, readonly) NSMutableDictionary *txBeaconRegions;
-@property (strong, nonatomic, readonly) NSMutableArray *txQueuedBeaconRegions;
+@property (strong, nonatomic, readonly) APBeaconService *wildcardBeaconService;
+@property (strong, nonatomic, readonly) CBPeripheral *readablePeripheral;
+@property (strong, nonatomic, readonly) NSTimer *scanTimer; 
+@property (strong, nonatomic, readonly) NSMutableDictionary *scannedPeripherals;
+@property (strong, nonatomic, readonly) NSMutableDictionary *verifiedAndPopulatedPeripherals;
 
 // Caller uses this to start broadcasting the APBeacon.
+-(id)initWithDelegate:(id)delegate;
 -(void)startBroadcastingBeaconRegion:(APBeaconRegion *)beaconRegion;
+-(void)beginScanningForBeacons;
 
 
 @end

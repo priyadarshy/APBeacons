@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C5496E79181EF9C900FE8707 /* APBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = C5496E78181EF9C900FE8707 /* APBeacon.m */; };
+		C5496E79181EF9C900FE8707 /* APMutableBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = C5496E78181EF9C900FE8707 /* APMutableBeacon.m */; };
 		C5B81B55181A6193004D41DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B81B54181A6193004D41DF /* Foundation.framework */; };
 		C5B81B57181A6193004D41DF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B81B56181A6193004D41DF /* CoreGraphics.framework */; };
 		C5B81B59181A6193004D41DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B81B58181A6193004D41DF /* UIKit.framework */; };
@@ -40,8 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C5496E77181EF9C900FE8707 /* APBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APBeacon.h; path = APBeacons/APBeacon.h; sourceTree = "<group>"; };
-		C5496E78181EF9C900FE8707 /* APBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APBeacon.m; path = APBeacons/APBeacon.m; sourceTree = "<group>"; };
+		C5496E77181EF9C900FE8707 /* APMutableBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APMutableBeacon.h; path = APBeacons/APMutableBeacon.h; sourceTree = "<group>"; };
+		C5496E78181EF9C900FE8707 /* APMutableBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APMutableBeacon.m; path = APBeacons/APMutableBeacon.m; sourceTree = "<group>"; };
 		C5B81B51181A6193004D41DF /* APBeacons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APBeacons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B81B54181A6193004D41DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C5B81B56181A6193004D41DF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -110,8 +110,8 @@
 				C5B81B64181A6193004D41DF /* APAppDelegate.m */,
 				C5B81B8F181A7828004D41DF /* APBeaconService.h */,
 				C5B81B90181A7828004D41DF /* APBeaconService.m */,
-				C5496E77181EF9C900FE8707 /* APBeacon.h */,
-				C5496E78181EF9C900FE8707 /* APBeacon.m */,
+				C5496E77181EF9C900FE8707 /* APMutableBeacon.h */,
+				C5496E78181EF9C900FE8707 /* APMutableBeacon.m */,
 				C5B81B5A181A6193004D41DF /* APBeacons */,
 				C5B81B79181A6193004D41DF /* APBeaconsTests */,
 				C5B81B53181A6193004D41DF /* Frameworks */,
@@ -288,7 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5E3A6BD181F95DB00E21CC4 /* APBeaconRegion.m in Sources */,
-				C5496E79181EF9C900FE8707 /* APBeacon.m in Sources */,
+				C5496E79181EF9C900FE8707 /* APMutableBeacon.m in Sources */,
 				C5B81B61181A6193004D41DF /* main.m in Sources */,
 				C5B81B65181A6193004D41DF /* APAppDelegate.m in Sources */,
 				C5B81B8B181A61E1004D41DF /* APCentralViewController.m in Sources */,

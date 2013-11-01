@@ -29,7 +29,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:nil];
-    self.service = [[APBeaconService alloc] initWithMajorData:nil minorData:nil];
+    self.service = [[APBeaconService alloc] initWildcardService];
 }
 
 - (void)didReceiveMemoryWarning

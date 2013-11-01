@@ -40,12 +40,10 @@
     }
     
     // Move out conversion to NSData for clarity.
-    int major_val = [self.major intValue];
-    NSData *majorData = [NSData dataWithBytes:&major_val length:sizeof(major_val)];
-    int minor_val  = [self.minor intValue];
-    NSData *minorData = [NSData dataWithBytes:&minor_val length:sizeof(minor_val)];
+    NSData *majorData = [[self.major stringValue] dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *minorData = [[self.minor stringValue] dataUsingEncoding:NSUTF8StringEncoding];
     // Initialize the APBeaconService (the BLE service).
-    self.service = [[APBeaconService alloc] initWithMajorData:majorData minorData:minorData];
+    self.service = [[APBeaconService alloc] initWithProximityUUID:proximityUUID major:majorData minor:minorData];
     
     return self;
 }
